@@ -1,0 +1,440 @@
+
+/* General Styles - consider adding these for a basic layout */
+
+body {
+    background-image: url("bg5.jpg");
+    background-size: cover; /* Or 'contain' depending on your needs */
+    background-repeat: no-repeat; /* Prevent the image from tiling */
+    background-position: center center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0; /* Center the image in the element */
+  }
+  
+
+header {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Hero Section */
+#hero {
+    color: white; /* Sets the heading text to white */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#hero h1 {
+    color: white; /* Sets the heading text to white */
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+#hero p {
+    color: white; /* Sets the heading text to white */
+    font-size: 1.2em;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+    animation: fadeInScale 1.2s ease-out;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Introduction Section */
+#introduction {
+    padding: 30px 20px;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    animation: fadeInRight 1s ease-out;
+}
+
+.intro-content p {
+    animation: fadeIn 1.3s ease-out;
+}
+
+/* Keyframes - Define the animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive adjustments - consider adding these */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        align-items: flex-start;
+    }
+}
+
+/* General Styles (Keep all previous CSS styles) */
+
+/* About Us Section */
+#about-us {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slide down a bit */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-content img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+}
+
+#about-us.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* No slide */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+/* Initial State */
+#about-us {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slide down a bit */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transition */
+}
+
+/* Visible State (Added by JavaScript) */
+#about-us.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* No slide */
+}
+
+
+/* Services Page Styles */
+#services {
+    padding: 30px 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.service-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* (Include all previous CSS styles) */
+
+/* Contact Page Styles */
+#contact {
+    padding: 30px 20px;
+    text-align: center; /* Center the container horizontally */
+}
+
+.contact-container {
+    max-width: 600px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Reset text alignment within the container */
+}
+
+#contactForm label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold; /* Make labels bolder */
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for padding/border to not affect width */
+}
+
+#contactForm button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px; /* Reduce padding on smaller screens */
+    }
+}
+/* (Include all previous CSS styles) */
+
+/* Services Page Styles */
+#services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#services h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Clip content to rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For absolute positioning of elements within */
+    padding-bottom: 20px; /* Add some padding at the bottom */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image display */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    border-bottom: 1px solid #eee;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+.service-card p {
+    font-size: 1.1em;
+    color: #555;
+    padding: 0 20px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.service-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Stagger the animations */
+.service-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        padding: 0;
+    }
+}
+
+
+/* Contact Page Styles */
+
+
+#contactForm label {
+    display: block;
+    margin-top: 10px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for padding/border to not affect width */
+}
+
+#contactForm button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* Contact Page Styles */
+#contact-us {
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s forwards; /* Apply fadeIn animation */
+  }
+  
+  /* Keyframes for Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+
+    .intro-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .intro-content img {
+        max-width: 100%;
+    }
+}
+
+
